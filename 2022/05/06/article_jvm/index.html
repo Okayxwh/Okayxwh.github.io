@@ -23,15 +23,15 @@
 <meta property="og:site_name" content="许伟浩个人博客">
 <meta property="og:description" content="JVM学习一、什么是JVM定义 Java Virtual Machine，JAVA程序的运行环境（JAVA二进制字节码的运行环境） 好处  一次编写，到处运行 自动内存管理，垃圾回收机制 数组下标越界检查  jdk、jre、jvm比较  内存结构整体架构  1.程序计数器作用用于保存JVM中下一条所要执行的指令的地址 特点 线程私有 CPU会为每个线程分配时间片，当当前线程的时间片使用完以后，CP">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/.com//20200608150422.png">
-<meta property="og:image" content="http://example.com/.com//20200608150440.png">
-<meta property="og:image" content="http://example.com/.com//20200608150534.png">
+<meta property="og:image" content="http://example.com/2022/05/06/article_jvm/20200608150422.png">
+<meta property="og:image" content="http://example.com/2022/05/06/article_jvm/20200608150440.png">
+<meta property="og:image" content="http://example.com/2022/05/06/article_jvm/20200608150534.png">
 <meta property="article:published_time" content="2022-05-06T02:26:27.000Z">
 <meta property="article:modified_time" content="2022-05-09T01:45:02.943Z">
 <meta property="article:author" content="许伟浩">
 <meta property="article:tag" content="java虚拟机">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/.com//20200608150422.png">
+<meta name="twitter:image" content="http://example.com/2022/05/06/article_jvm/20200608150422.png">
   
   
   <title>JVM学习 - 许伟浩个人博客</title>
@@ -259,9 +259,9 @@
 <li>数组下标越界检查</li>
 </ul>
 <p><strong>jdk、jre、jvm比较</strong></p>
-<p><img src="/.com//20200608150422.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2022/05/06/article_jvm/20200608150422.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <h2 id="内存结构"><a href="#内存结构" class="headerlink" title="内存结构"></a>内存结构</h2><p><strong>整体架构</strong></p>
-<p><img src="/.com//20200608150440.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2022/05/06/article_jvm/20200608150440.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <h3 id="1-程序计数器"><a href="#1-程序计数器" class="headerlink" title="1.程序计数器"></a>1.程序计数器</h3><h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><p>用于保存JVM中下一条所要执行的指令的地址</p>
 <h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul>
 <li>线程私有<ul>
@@ -279,7 +279,7 @@
 <p>代码</p>
 <figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>		method1();<br>	&#125;<br><br>	<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">method1</span><span class="hljs-params">()</span> &#123;<br>		method2(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);<br>	&#125;<br><br>	<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">method2</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> &#123;<br>		<span class="hljs-type">int</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> a + b;<br>		<span class="hljs-keyword">return</span> c;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p><img src="/.com//20200608150534.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2022/05/06/article_jvm/20200608150534.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <p>在控制台中可以看到，主类中的方法在进入虚拟机栈的时候，符合栈的特点</p>
 <p><strong>问题辨析</strong></p>
 <ul>
