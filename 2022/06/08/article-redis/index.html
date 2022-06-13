@@ -43,8 +43,9 @@
 <meta property="og:image" content="http://example.com/2022/06/08/article-redis/image-20220610103520524.png">
 <meta property="og:image" content="http://example.com/2022/06/08/article-redis/image-20220610110946312.png">
 <meta property="og:image" content="http://example.com/2022/06/08/article-redis/image-20220610111047559.png">
+<meta property="og:image" content="http://example.com/2022/06/08/article-redis/image-20220613204043562.png">
 <meta property="article:published_time" content="2022-06-08T11:13:02.000Z">
-<meta property="article:modified_time" content="2022-06-10T03:20:46.132Z">
+<meta property="article:modified_time" content="2022-06-13T12:40:49.603Z">
 <meta property="article:author" content="许伟浩">
 <meta property="article:tag" content="redis">
 <meta name="twitter:card" content="summary_large_image">
@@ -218,7 +219,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      4.8k 字
+      6.1k 字
     </span>
   
 
@@ -227,7 +228,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      40 分钟
+      51 分钟
     </span>
   
 
@@ -569,6 +570,138 @@
 <td>hsetnx heima:user:3 sex man</td>
 </tr>
 </tbody></table>
+<h3 id="3-3List类型的常用命令"><a href="#3-3List类型的常用命令" class="headerlink" title="3.3List类型的常用命令"></a>3.3List类型的常用命令</h3><h4 id="3-3-1-介绍"><a href="#3-3-1-介绍" class="headerlink" title="3.3.1.介绍"></a>3.3.1.介绍</h4><p>(1)Redis中的List类型与Java中的LinkedList类似，可以看做是一个<strong>双向链表结构</strong>。既可以支持正向检索和也可以支持反向检索。(<strong>左右两边都可进行插入弹出</strong>)</p>
+<p>(2)特征也与LinkedList类似：</p>
+<ul>
+<li><strong>有序</strong></li>
+<li><strong>元素可以重复</strong></li>
+<li><strong>插入和删除快</strong></li>
+<li><strong>查询速度一般</strong></li>
+</ul>
+<p>常用来存储一个有序数据，例如：朋友圈点赞列表，评论列表等。</p>
+<h4 id="3-3-2-List类型的常用命令"><a href="#3-3-2-List类型的常用命令" class="headerlink" title="3.3.2 List类型的常用命令"></a>3.3.2 List类型的常用命令</h4><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LPUSH key element …</td>
+<td>向列表左侧插入一个或多个元素</td>
+<td>lpush users 1 2 3</td>
+</tr>
+<tr>
+<td>RPUSH key element …</td>
+<td>向列表右侧插入一个或多个元素</td>
+<td>rpush users 3 4 5</td>
+</tr>
+<tr>
+<td>LPOP key [count]</td>
+<td>移除并返回列表左侧的第一个元素，没有则返回nil  ,count不写就移除一个，写了就移除count个</td>
+<td>lpop users</td>
+</tr>
+<tr>
+<td>RPOP key [count]</td>
+<td>移除并返回列表右侧的第一个元素，count不写就移除一个，写了就移除count个</td>
+<td>rpop users</td>
+</tr>
+<tr>
+<td>LRANGE key star end</td>
+<td>RPOP key [count]返回一段角标（下标）范围内的所有元素</td>
+<td>lrange users 0 2</td>
+</tr>
+<tr>
+<td>BLPOP和BRPOP</td>
+<td>与LPOP和RPOP类似，只不过在没有元素时等待指定时间，而不是直接返回nil,例如blpop users 200，<strong>200是指list中没有元素的时候不是直接返回nil,而是等待200秒，如果200秒内插入值就返回，200秒内没有插入值就返回nil</strong></td>
+<td>blpop users 200</td>
+</tr>
+</tbody></table>
+<h4 id="3-3-4思考"><a href="#3-3-4思考" class="headerlink" title="3.3.4思考"></a>3.3.4思考</h4><p>1、如何利用List结构模拟一个栈?（清新脱俗的例子，喝酒喝吐了就是栈，先进后出）</p>
+<ul>
+<li>入口和出口在同一边（例如都用lpush和lpop）</li>
+</ul>
+<p>2、如何利用List结构模拟一个队列?（喝酒喝了没吐去上厕所就是队列,先进先出）</p>
+<ul>
+<li>入口和出口在不同边(例如都用lpush和rpop)</li>
+</ul>
+<p>3、如何利用List结构模拟一个阻塞队列?</p>
+<ul>
+<li><p>入口和出口在不同边(例如都用lpush和rpop)</p>
+</li>
+<li><p>出队时采用BLPOP或BRPOP</p>
+</li>
+</ul>
+<h3 id="3-4Set类型的常用命令"><a href="#3-4Set类型的常用命令" class="headerlink" title="3.4Set类型的常用命令"></a>3.4Set类型的常用命令</h3><h4 id="3-4-1-介绍"><a href="#3-4-1-介绍" class="headerlink" title="3.4.1 介绍"></a>3.4.1 介绍</h4><p>(1)Redis的Set结构与Java中的HashSet类似，可以看做是一个value为null的HashMap。因为也是一个hash表，因此具备与HashSet类似的特征：</p>
+<ul>
+<li>无序</li>
+<li>元素不可重复</li>
+<li>查找快</li>
+<li>支持交集、并集、差集等功能</li>
+</ul>
+<h4 id="3-4-2-Set类型常用命令"><a href="#3-4-2-Set类型常用命令" class="headerlink" title="3.4.2 Set类型常用命令"></a>3.4.2 Set类型常用命令</h4><p>单个集合的操作</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>介绍</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SADD key member …</td>
+<td>向set中添加一个或多个元素</td>
+<td>sadd s1 a b c</td>
+</tr>
+<tr>
+<td>SREM key member …</td>
+<td>移除set中的指定元素</td>
+<td>srem s1 a b c</td>
+</tr>
+<tr>
+<td>SCARD key</td>
+<td>返回set中元素的个数</td>
+<td>scard s1</td>
+</tr>
+<tr>
+<td>SISMEMBER key member</td>
+<td>判断一个元素是否存在于set中</td>
+<td>sismember s1 a</td>
+</tr>
+<tr>
+<td>SMEMBERS</td>
+<td>获取set中的所有元素</td>
+<td>smembers s1</td>
+</tr>
+</tbody></table>
+<p>多个集合的操作</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>介绍</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SINTER key1 key2 …</td>
+<td>求key1与key2的交集</td>
+<td>sinter s1 s2</td>
+</tr>
+<tr>
+<td>SDIFF key1 key2 …</td>
+<td>求key1与key2的差集,例如sdiff s1 s2，就是查找s1有但s2没有的元素</td>
+<td>sdiff s1 s2</td>
+</tr>
+<tr>
+<td>SUNION key1 key2 …</td>
+<td>求key1和key2的并集</td>
+<td>sunion s1 s2</td>
+</tr>
+</tbody></table>
+<p>练习</p>
+<p><img src="/2022/06/08/article-redis/image-20220613204043562.png" srcset="/img/loading.gif" lazyload alt="image-20220613204043562"></p>
 
             </div>
             <hr>
