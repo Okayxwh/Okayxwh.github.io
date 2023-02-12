@@ -16,21 +16,21 @@
   <meta name="author" content="Okay">
   <meta name="keywords" content="">
   
-    <meta name="description" content="（java基础学习笔记）JAVA类变量和类方法一、类变量 1.什么是类变量 类变量：也叫静态变量或静态属性，是该类的声明的所有对象共享的变量，所有该类声明的对象去访问它时，取到的都是相同的值，同样任何该类的对象去修改它时，修改的也是同一个变量。 2.怎么定义类变量 定义语法：（1）访问修饰符  static 数据类型 变量名；（推荐）        （2）static 访问修饰符 数据类型 变量名">
+    <meta name="description" content="（java基础学习）接口1.接口就是给出一些没有实现的方法，封装到一起，到某个类要使用的时候，在根据具体情况把这些方法写出来。 2.语法： 1234567interface 接口名&amp;#123;属性抽象方法&amp;#125;    123456789class 类名 implements 接口&amp;#123;自己属性；自己方法；必须实现的接口的抽象方法&amp;#125;    小结：接口是更加抽象的抽象的类，抽象类">
 <meta property="og:type" content="article">
-<meta property="og:title" content="（java基础学习笔记）JAVA类变量和类方法">
-<meta property="og:url" content="http://example.com/2021/08/06/article_java1/index.html">
+<meta property="og:title" content="（java基础学习）接口">
+<meta property="og:url" content="http://example.com/2021/08/22/article_java6/index.html">
 <meta property="og:site_name" content="Okay个人博客">
-<meta property="og:description" content="（java基础学习笔记）JAVA类变量和类方法一、类变量 1.什么是类变量 类变量：也叫静态变量或静态属性，是该类的声明的所有对象共享的变量，所有该类声明的对象去访问它时，取到的都是相同的值，同样任何该类的对象去修改它时，修改的也是同一个变量。 2.怎么定义类变量 定义语法：（1）访问修饰符  static 数据类型 变量名；（推荐）        （2）static 访问修饰符 数据类型 变量名">
+<meta property="og:description" content="（java基础学习）接口1.接口就是给出一些没有实现的方法，封装到一起，到某个类要使用的时候，在根据具体情况把这些方法写出来。 2.语法： 1234567interface 接口名&amp;#123;属性抽象方法&amp;#125;    123456789class 类名 implements 接口&amp;#123;自己属性；自己方法；必须实现的接口的抽象方法&amp;#125;    小结：接口是更加抽象的抽象的类，抽象类">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-08-06T00:54:44.000Z">
-<meta property="article:modified_time" content="2023-02-12T03:29:36.079Z">
+<meta property="article:published_time" content="2021-08-22T00:54:44.000Z">
+<meta property="article:modified_time" content="2023-02-12T03:39:07.030Z">
 <meta property="article:author" content="Okay">
 <meta property="article:tag" content="java基础">
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>（java基础学习笔记）JAVA类变量和类方法 - Okay个人博客</title>
+  <title>（java基础学习）接口 - Okay个人博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -176,7 +176,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="（java基础学习笔记）JAVA类变量和类方法">
+            <span class="h2" id="subtitle" title="（java基础学习）接口">
               
             </span>
 
@@ -186,8 +186,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-08-06 08:54" pubdate>
-        2021年8月6日 早上
+      <time datetime="2021-08-22 08:54" pubdate>
+        2021年8月22日 早上
       </time>
     </span>
   
@@ -197,7 +197,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.5k 字
+      1.9k 字
     </span>
   
 
@@ -206,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      13 分钟
+      17 分钟
     </span>
   
 
@@ -243,52 +243,48 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">（java基础学习笔记）JAVA类变量和类方法</h1>
+            <h1 style="display: none">（java基础学习）接口</h1>
             
             <div class="markdown-body">
-              <h3 id="（java基础学习笔记）JAVA类变量和类方法"><a href="#（java基础学习笔记）JAVA类变量和类方法" class="headerlink" title="（java基础学习笔记）JAVA类变量和类方法"></a>（java基础学习笔记）JAVA类变量和类方法</h3><p>一、类变量</p>
-<p>1.什么是类变量</p>
-<p>类变量：也叫静态变量或静态属性，是该类的声明的所有对象共享的变量，所有该类声明的对象去访问它时，取到的都是相同的值，同样任何该类的对象去修改它时，修改的也是同一个变量。</p>
-<p>2.怎么定义类变量</p>
-<p>定义语法：（1）访问修饰符  static 数据类型 变量名；（推荐）</p>
-<div class="code-wrapper"><pre><code class="hljs">       （2）static 访问修饰符 数据类型 变量名；
-</code></pre></div>
-<p>3.怎么访问类变量</p>
-<p>（1）对象.类变量名</p>
-<p>（2）类.类对象名（推荐）</p>
-<p>注：静态变量的访问修饰符的访问权限和普通属性一样</p>
-<figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.hspedu.static_;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">VisitStatic</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        System.out.println(A.age);<span class="hljs-comment">//18</span><br>        <span class="hljs-type">A</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">A</span>();<br>        <span class="hljs-type">A</span> <span class="hljs-variable">a1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">A</span>();<br>        System.out.println(a.age);<span class="hljs-comment">//18</span><br>        a1.age = <span class="hljs-number">2</span>;<br>        System.out.println(A.age);<span class="hljs-comment">//2</span><br>        System.out.println(a.age);<span class="hljs-comment">//2</span><br>        System.out.println(a1.age);<span class="hljs-comment">//2</span><br>    &#125;<br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">A</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> age=<span class="hljs-number">18</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+              <h3 id="（java基础学习）接口"><a href="#（java基础学习）接口" class="headerlink" title="（java基础学习）接口"></a>（java基础学习）接口</h3><p>1.接口就是给出一些没有实现的方法，封装到一起，到某个类要使用的时候，在根据具体情况把这些方法写出来。</p>
+<p>2.语法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><pre><code class="hljs java">interface 接口名&#123;<br><br>属性<br><br>抽象方法<br><br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>4.类变量使用细节</p>
-<p>（1）什么时候需要用类变量</p>
-<p>当需要所有对象都共享一个变量的时候，如，定义一个学生类，要统计所有学生交的学费。</p>
-<p>（2）类变量（静态属性&#x2F;静态变量）和非静态变量的区别</p>
-<p>类变量是该类的所有对象共享的，而非静态变量是每个对象独享的。</p>
-<p>（3）加上static称为类变量或静态变量或静态属性，否则称为实例变量&#x2F;普通变量&#x2F;非静态变量…</p>
-<p>（4）类变量可以通过 类名.类变量名 或  对象名.类变量名来访问，但推荐用第一种（前提是满足访问修饰符的访问权限和范围）</p>
-<p>（5）实例变量不能通过类.变量名来访问</p>
-<p>（6）类变量是在类加载的时候就初始化了，也就是说，即使你没有创建对象，只要类加载了，就可以使用类变量</p>
-<p>（7）类变量的生命周期是随类的加载开始，随类的消亡而销毁的。</p>
-<p>二、类方法</p>
-<p>1.类方法也叫静态方法</p>
-<p>2.定义类方法形式：（推荐）（1）访问修饰符 static 数据返回类型 方法名（）{ }</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">（<span class="hljs-number">2</span>）<span class="hljs-keyword">static</span> 访问修饰符 数据返回类型 方法名（）&#123; &#125;<br></code></pre></td></tr></table></figure>
 
-<p>3.类方法的调用</p>
-<p>类.类方法名 或 对象名.类方法名（前提是 满足访问修饰符的访问权限和范围）</p>
-<p>4.类方法的应用场景</p>
-<p>（1）当方法不涉及到任何对象相关的成员，可以将方法设计成静态方法。</p>
-<p>（2）实际开发过程中，往往将一些通用的方法设计成静态方法，这样不用创建对象就能使用，比较方便，例如，冒泡，计算器…</p>
-<p>5.类方法使用细节</p>
-<p>（1）类方法和普通方法都是随着类的加载而加载，将结构信息存储在方法区中</p>
-<p>类方法中没有this的参数</p>
-<p>普通方法中隐含着this参数</p>
-<p>（2）类方法可以通过类名调用，也可以通过对象名调用。</p>
-<p>（3）普通方法需要通过对象名调用，即要先声明对象，再调用（例：对象名.方法名（参数）），不能通过类名调用。</p>
-<p>（4）类方法中不允许使用和对象有关的关键字，比如this和super。普通方法可以。</p>
-<p>（5）类方法（静态方法）只能访问静态变量或静态方法</p>
-<p>（6）普通成员方法，既可以访问非静态成员，也可以访问静态成员</p>
-<p>小结：静态方法，只能访问静态的成员，非静态方法，可以访问静态成员和非静态成员(必须遵守访问权限)</p>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java">class 类名 implements 接口&#123;<br><br>自己属性；<br><br>自己方法；<br><br>必须实现的接口的抽象方法<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<p>小结：接口是更加抽象的抽象的类，抽象类里面的方法可以有方法体，接口里面的所有方法都没有方法体。接口体现了程序设计的多态和高内聚低耦合的设计思想。</p>
+<p>注：jdk8.0后接口可以有静态方法，默认方法，也就是说接口中可以有方法的具体实现。</p>
+<p>3.细节</p>
+<p>（1）接口不能被实例化。</p>
+<p>（2）接口中所有方法都是public方法，接口中抽象方法，可以不用abstract修饰。</p>
+<p>例：void add();  实际上是public abstract void  add();</p>
+<p>（3）一个普通类实现接口，必须将该接口的所有方法实现。</p>
+<p>（4）抽象类实现接口，可以不用实现接口的方法。</p>
+<p>（5）一个类可以同时实现多个接口。</p>
+<p>例： class Cat implement AA,BB{} &#x2F;&#x2F;实现AA和BB两个接口</p>
+<p>（6）接口中的属性都是public static final 的。</p>
+<p>例如：int a&#x3D;1;实际上是public static final int a &#x3D; 1;</p>
+<p>（7）接口中访问属性： 接口名.属性名</p>
+<p>（8）接口不能继承其他的类，但是可以继承多个别的接口。</p>
+<p>例：interface A extends B,C{}</p>
+<p>（9）接口的修饰符只能是public和默认，这一点和类一样。</p>
+<p>4.接口VS继承类</p>
+<p>（1）接口和继承解决的问题不同，继承主要解决代码的复用性和可维护性。</p>
+<p>接口主要价值在于设计，设计好各种规范（方法），让其他类去实现这些方法。</p>
+<p>（2）接口比继承更灵活，继承是满足is - a 的关系，而接口只需要满足like - a的关系</p>
+<p>（3）接口在一定程度上实现代码解耦（即：接口规范性+动态绑定机制）</p>
+<p>5.接口的多态特性</p>
+<p>（1）接口的多态参数，即接口引用可以指向实现了该接口的类的对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.hspedu.interface_;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">UsbInterface</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">start</span><span class="hljs-params">()</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">end</span><span class="hljs-params">()</span>;<br>&#125;<br><span class="hljs-keyword">package</span> com.hspedu.interface_;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Phone</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">UsbInterface</span>&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">start</span><span class="hljs-params">()</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;手机开始工作...&quot;</span>);<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">end</span><span class="hljs-params">()</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;手机停止工作...&quot;</span>);<br>    &#125;<br>&#125;<br><span class="hljs-keyword">package</span> com.hspedu.interface_;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Computer</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">work</span><span class="hljs-params">(UsbInterface usbInterface)</span>&#123;<br>        usbInterface.start();<br>        usbInterface.end();<br>    &#125;<br>&#125;<br><span class="hljs-keyword">package</span> com.hspedu.interface_;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Interface01</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br><br>        <span class="hljs-type">Phone</span> <span class="hljs-variable">phone</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Phone</span>();<br>        <span class="hljs-type">Computer</span> <span class="hljs-variable">computer</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Computer</span>();<br>        computer.work(phone);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>（2）接口存在多态传递现象。</p>
+<p>接口1继承接口2，一个类AA实现接口1，接口1的引用可以接收AA类声明的对象,接口2也可以，这就是多态传递现象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.hspedu.interface_;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">InterfacePolyPass</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">IH</span> <span class="hljs-variable">ih</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">KK</span>();<br>        <span class="hljs-type">IG</span> <span class="hljs-variable">ig</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">KK</span>();<br>    &#125;<br>&#125;<br><span class="hljs-keyword">interface</span> <span class="hljs-title class_">IG</span>&#123;<br><br>&#125;<br><span class="hljs-keyword">interface</span> <span class="hljs-title class_">IH</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">IG</span>&#123;<br><br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">KK</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">IH</span>&#123;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
 
             </div>
             <hr>
@@ -323,9 +319,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/08/10/article_java2/">
+                      <a href="/2021/08/25/article_java7/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">（java基础学习）代码块</span>
+                        <span class="hidden-mobile">（java基础学习）内部类</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -333,8 +329,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/07/06/article_jdk/">
-                        <span class="hidden-mobile">为什么安装jdk后要配置环境变量？</span>
+                      <a href="/2021/08/21/article_java5/">
+                        <span class="hidden-mobile">（java基础学习）abstract关键字和模板设计模式</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

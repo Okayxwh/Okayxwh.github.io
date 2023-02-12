@@ -16,38 +16,21 @@
   <meta name="author" content="Okay">
   <meta name="keywords" content="">
   
-    <meta name="description" content="为什么安装jdk后要配置环境变量？安装jdk步骤网上很多，这里我就不展开说了，今天我要说的是为什么安装jdk后要配置环境变量。 让我们带着：是什么？为什么？怎么做？这3个疑问继续看下去 （1）安装jdk可以直接用吗？ 安装jdk后（还没进行环境变量配置）以后我们打开命令行模式（win+r 然后输入cmd回车）    我们进入命令行模式    输入java，然后按回车键     发现提示java命令">
+    <meta name="description" content="（java基础学习）abstract关键字和模板设计模式一、abstract（抽象） 1.问题解决：当父类的某些方法需要声明，但是又不确定如何实现时，可以将其声明为抽象方法，那么这个类就是抽象类。 当父类的一些方法不能确定时，可以用abstract关键字来修饰该方法，这个方法就是抽象方法，用abstract来修饰该类就是抽象类。 例如 ：把Animal做成抽象类，并让子类cat类实现 123456">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Okay个人博客">
-<meta property="og:url" content="http://example.com/2023/02/12/article_jdk/index.html">
+<meta property="og:title" content="（java基础学习）abstract关键字和模板设计模式">
+<meta property="og:url" content="http://example.com/2021/08/21/article_java5/index.html">
 <meta property="og:site_name" content="Okay个人博客">
-<meta property="og:description" content="为什么安装jdk后要配置环境变量？安装jdk步骤网上很多，这里我就不展开说了，今天我要说的是为什么安装jdk后要配置环境变量。 让我们带着：是什么？为什么？怎么做？这3个疑问继续看下去 （1）安装jdk可以直接用吗？ 安装jdk后（还没进行环境变量配置）以后我们打开命令行模式（win+r 然后输入cmd回车）    我们进入命令行模式    输入java，然后按回车键     发现提示java命令">
+<meta property="og:description" content="（java基础学习）abstract关键字和模板设计模式一、abstract（抽象） 1.问题解决：当父类的某些方法需要声明，但是又不确定如何实现时，可以将其声明为抽象方法，那么这个类就是抽象类。 当父类的一些方法不能确定时，可以用abstract关键字来修饰该方法，这个方法就是抽象方法，用abstract来修饰该类就是抽象类。 例如 ：把Animal做成抽象类，并让子类cat类实现 123456">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70.png">
-<meta property="og:image" content="http://example.com/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-16761700595875.png">
-<meta property="og:image" content="http://example.com/2023/02/12/article_jdk/20210711195253336.png">
-<meta property="og:image" content="http://example.com/2023/02/12/article_jdk/20210711195430878.png">
-<meta property="og:image" content="http://example.com/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70.png">
-<meta property="og:image" content="http://example.com/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-16761702245057.png">
-<meta property="og:image" content="http://example.com/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617022947610.png">
-<meta property="og:image" content="http://example.com/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617023745613.png">
-<meta property="og:image" content="http://example.com/2023/02/12/article_jdk/20210711200844105.png">
-<meta property="og:image" content="http://example.com/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617025148018.png">
-<meta property="og:image" content="http://example.com/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617026392521.png">
-<meta property="og:image" content="http://example.com/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617027644224.png">
-<meta property="og:image" content="http://example.com/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617028345327.png">
-<meta property="og:image" content="http://example.com/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617028921930.png">
-<meta property="og:image" content="http://example.com/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617029785233.png">
-<meta property="og:image" content="http://example.com/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617030431236.png">
-<meta property="og:image" content="http://example.com/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617031111539.png">
-<meta property="article:published_time" content="2023-02-12T02:49:28.190Z">
-<meta property="article:modified_time" content="2023-02-12T02:56:12.075Z">
+<meta property="article:published_time" content="2021-08-21T00:54:44.000Z">
+<meta property="article:modified_time" content="2023-02-12T03:38:44.109Z">
 <meta property="article:author" content="Okay">
+<meta property="article:tag" content="java基础">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70.png">
   
   
-  <title>Okay个人博客</title>
+  <title>（java基础学习）abstract关键字和模板设计模式 - Okay个人博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -193,7 +176,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="">
+            <span class="h2" id="subtitle" title="（java基础学习）abstract关键字和模板设计模式">
               
             </span>
 
@@ -203,8 +186,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2023-02-12 10:49" pubdate>
-        2023年2月12日 上午
+      <time datetime="2021-08-21 08:54" pubdate>
+        2021年8月21日 早上
       </time>
     </span>
   
@@ -214,7 +197,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.2k 字
+      2k 字
     </span>
   
 
@@ -223,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      11 分钟
+      17 分钟
     </span>
   
 
@@ -260,96 +243,59 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none"></h1>
+            <h1 style="display: none">（java基础学习）abstract关键字和模板设计模式</h1>
             
             <div class="markdown-body">
-              <h3 id="为什么安装jdk后要配置环境变量？"><a href="#为什么安装jdk后要配置环境变量？" class="headerlink" title="为什么安装jdk后要配置环境变量？"></a>为什么安装jdk后要配置环境变量？</h3><p>安装jdk步骤网上很多，这里我就不展开说了，今天我要说的是为什么安装jdk后要配置环境变量。</p>
-<p>让我们带着：是什么？为什么？怎么做？这3个疑问继续看下去</p>
-<p>（1）安装jdk可以直接用吗？</p>
-<p>安装jdk后（还没进行环境变量配置）以后我们打开命令行模式（win+r 然后输入cmd回车）</p>
-<img src="/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
+              <h3 id="（java基础学习）abstract关键字和模板设计模式"><a href="#（java基础学习）abstract关键字和模板设计模式" class="headerlink" title="（java基础学习）abstract关键字和模板设计模式"></a>（java基础学习）abstract关键字和模板设计模式</h3><p>一、abstract（抽象）</p>
+<p>1.问题解决：当父类的某些方法需要声明，但是又不确定如何实现时，可以将其声明为抽象方法，那么这个类就是抽象类。</p>
+<p>当父类的一些方法不能确定时，可以用abstract关键字来修饰该方法，这个方法就是抽象方法，用abstract来修饰该类就是抽象类。</p>
+<p>例如 ：把Animal做成抽象类，并让子类cat类实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Animal</span>&#123;<br><br>String name;<br><br><span class="hljs-type">int</span> age;<br><br><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">cry</span><span class="hljs-params">()</span>;<br><br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p> 我们进入命令行模式</p>
-<img src="/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-16761700595875.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
+<p>2.抽象类介绍</p>
+<p>（1）用abstract关键字来修饰一个类时，这个类就叫抽象类</p>
+<p>（2）用abstract关键字来修饰一个方法，这个方法就是抽象方法</p>
+<p>3.抽象类细节</p>
+<p>（1）抽象类不能被实例化</p>
+<p>（2）抽象类不一定要包含abstract方法，也就是说，抽象类可能没有抽象方法</p>
+<p>（3）一旦类包含了abstract方法，则这个类必须声明为abstract。</p>
+<p>（4）abstract只能修饰类和方法，不能修饰属性和其他的。</p>
+<p>（5）抽象类本质还是类，可以拥有任意成员（非抽象方法、静态属性等等）</p>
+<p>（6）抽象方法不能有方法体。</p>
+<p>（7）如果一个类继承了抽象类，那么它必须实现类的所有抽象方法，除非它自己也声明为abstract类。</p>
+<p>（8）抽象方法不能使用private、final、static来修饰，因为这些关键字与重写相违背。</p>
+<p>二、模板设计模式。</p>
+<p>1.基本介绍</p>
+<p>抽象类体现的就是一种模板设计，抽象类作为多个子类的通用模板，子类在抽象类的基础上进行扩展、改造，但子类总体上会保留抽象类的行为方式。</p>
+<p>2.抽象设计能解决的问题</p>
+<p>（1）当功能内部一部分实现是确定的，一部分是不确定的，这时可以把不确定的那部分暴露出去，让子类去实现。</p>
+<p>（2）编写一个抽象父类，父类提供了多个子类的通用方法，并把一个或多个方法留给其他子类实现，就是一种模板模式。</p>
+<p>例子：要求：（1）有多个类（2）要求统计各自完成任务的时间</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.hspedu.abstract_.Template;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Template</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">job</span><span class="hljs-params">()</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">calculateTime</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-type">long</span> <span class="hljs-variable">start</span> <span class="hljs-operator">=</span> System.currentTimeMillis();<span class="hljs-comment">//记录当前的时间</span><br>        job();<br>        <span class="hljs-type">long</span> <span class="hljs-variable">end</span> <span class="hljs-operator">=</span> System.currentTimeMillis();<span class="hljs-comment">//记录当前的时间</span><br>        System.out.println(<span class="hljs-string">&quot;任务执行时间&quot;</span>+(end-start));<span class="hljs-comment">//end-start为job(执行时间</span><br>    &#125;<br>&#125;<br><span class="hljs-keyword">package</span> com.hspedu.abstract_.Template;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AA</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Template</span>&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">job</span><span class="hljs-params">()</span> &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">num</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">900000</span>; i++) &#123;<br>                num+=i;<br>            &#125;<br>    &#125;<br>&#125;<br><span class="hljs-keyword">package</span> com.hspedu.abstract_.Template;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">BB</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Template</span>&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">job</span><span class="hljs-params">()</span> &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">num</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">500000</span>; i++) &#123;<br>                num*=i;<br>            &#125;<br>    &#125;<br>&#125;<br><span class="hljs-keyword">package</span> com.hspedu.abstract_.Template;<br><br><span class="hljs-keyword">public</span>  <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestTemplate</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-keyword">new</span> <span class="hljs-title class_">AA</span>().calculateTime();<br>        <span class="hljs-keyword">new</span> <span class="hljs-title class_">BB</span>().calculateTime();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p> 输入java，然后按回车键</p>
- <img src="/2023/02/12/article_jdk/20210711195253336.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
 
-<p><img src="/2023/02/12/article_jdk/20210711195430878.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-<p>发现提示java命令不能运行 </p>
-<p>下面重点来了</p>
-<p>我们打开你安装jdk目录下的bin文件夹</p>
- <img src="/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
 
- 
-
-<p>双击bin文件夹进入bin目录下 </p>
- <img src="/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-16761702245057.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
-
- 
-
-<p>在把目录位置改成cmd，则在这个目录下进入命令行模式</p>
- <img src="/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617022947610.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
-
- 
-
- 
-
- <img src="/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617023745613.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
-
-<p> jdk的bin目录下的命令行模式输入java,回车</p>
-<img src="/2023/02/12/article_jdk/20210711200844105.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
-
- <img src="/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617025148018.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom: 33%;">
-
-<p> 我们发现安装jdk后没有进行环境变量配置，在你安装jdk的目录下的bin目录下打开命令行是可以执行java命令的，而在别的目录不可以执行java命令。</p>
-<p>为什么？？？？？</p>
-<p>这是因为我们执行java命令需要开发工具集，而这些工具文件在jdk目录下的bin目录里面，所以我们在bin目录下可以成功执行java命令，其他目录不行。</p>
-<p>怎么做？？？？</p>
-<p>去配置环境变量！！！我们配置环境变量的目的就是让java命令在任何目录下都可以执行，或者说让它执行时跳转到jdk的bin目录下。</p>
-<p>（2）配置环境变量</p>
-<p>打开资源管理器右键点击属性</p>
-<img src="/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617026392521.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom: 33%;">
-
- 
-
-<p> 点击高级系统设置</p>
- <img src="/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617027644224.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
-
-<p> 点击”高级”任何点击”环境变量”</p>
- <img src="/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617028345327.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom: 33%;">
-
-<p> 在下方系统变量那里点击编辑</p>
- <img src="/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617028921930.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
-
-<p> 变量名输入JAVA_HOME</p>
-<p>变量值为你安装jdk的目录，然后点击“确定”</p>
-<p>增加JAVA_HOME环境变量，指向jdk的安装目录</p>
- <img src="/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617029785233.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
-
- 
-
-<p> 选中Path然后点击编辑</p>
- <img src="/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617030431236.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
-
-<p> 点击新建然后输入%JAVA_HOME%\bin</p>
-<p>点击“确定”完成配置</p>
-<p>%JAVA_HOME%\bin这个的意思是告诉系统要到JAVA_HOME这个指向的目录下的bin目录去执行文件</p>
- <img src="/2023/02/12/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617031111539.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom: 33%;">
-
- 
-
-<p> 到这里环境变量配置就结束了，以后我们在任何目录下都可以执行java命令，是不是很神奇</p>
-<p>总结：</p>
-<p>1、如果不配置环境变量要到所安装jdk的目录下的bin才能执行，<br>因为把jdk执行的指令在所安装jdk的目录下的bin下，所以要在bin下执行cmd里面java命令，<br>配置环境变量的目的是在任何目录下都能执行java命令，不用到jdk的bin目录下就能执行</p>
-<p>2、配置环境变量：<br>（1）我的电脑–属性–高级系统设置–环境变量<br>（2）增加JAVA_HOME环境变量，指向jdk的安装目录 如 d:\program\jdk8<br>（3）编辑path环境变量，增加%JAVA_HOME%\bin    （告诉系统要到JAVA_HOME这个指向的目录下的bin目录去执行文件）</p>
-<p>tip:这样以后更改jdk安装目录只需要改JAVA_HOME里面的目录就行了<br>————————————————<br>版权声明：本文为CSDN博主「尾号2000」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/xwhokay/article/details/118658735">https://blog.csdn.net/xwhokay/article/details/118658735</a></p>
+<p>我的理解：当很多类有一个类似的方法，例如AA类要计算1+到900000的时间，BB类要计算1*到500000的时间，他们编写的方法里面的代码分为 前中后 三个部分，而且只有中间这部分的代码不同，前和后 两部部分代码相同，这时我们可以写一个抽象父类，父类中写一个抽象方法和一个普通方法，抽象方法就是把AA类和BB类的方法的 中间 那一部分代码抽象出来等子类去重写就行，然后普通方法里面写  （前部分代码+抽象方法+后部分代码），然后子类继承父类，然后重写抽象方法，然后调用父类的普通方法就行了。</p>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/java%E5%9F%BA%E7%A1%80/">java基础</a>
+                    
+                  </div>
                 
               </div>
               
@@ -364,12 +310,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2021/08/22/article_java6/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">（java基础学习）接口</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/08/article-redis/">
-                        <span class="hidden-mobile">Redis入门篇</span>
+                      <a href="/2021/08/17/article_java4/">
+                        <span class="hidden-mobile">（java基础学习）final关键字</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

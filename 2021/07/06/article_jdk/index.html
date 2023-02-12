@@ -16,21 +16,39 @@
   <meta name="author" content="Okay">
   <meta name="keywords" content="">
   
-    <meta name="description" content="（java基础学习笔记）JAVA类变量和类方法一、类变量 1.什么是类变量 类变量：也叫静态变量或静态属性，是该类的声明的所有对象共享的变量，所有该类声明的对象去访问它时，取到的都是相同的值，同样任何该类的对象去修改它时，修改的也是同一个变量。 2.怎么定义类变量 定义语法：（1）访问修饰符  static 数据类型 变量名；（推荐）        （2）static 访问修饰符 数据类型 变量名">
+    <meta name="description" content="为什么安装jdk后要配置环境变量？安装jdk步骤网上很多，这里我就不展开说了，今天我要说的是为什么安装jdk后要配置环境变量。 让我们带着：是什么？为什么？怎么做？这3个疑问继续看下去 （1）安装jdk可以直接用吗？ 安装jdk后（还没进行环境变量配置）以后我们打开命令行模式（win+r 然后输入cmd回车）    我们进入命令行模式    输入java，然后按回车键     发现提示java命令">
 <meta property="og:type" content="article">
-<meta property="og:title" content="（java基础学习笔记）JAVA类变量和类方法">
-<meta property="og:url" content="http://example.com/2021/08/06/article_java1/index.html">
+<meta property="og:title" content="为什么安装jdk后要配置环境变量？">
+<meta property="og:url" content="http://example.com/2021/07/06/article_jdk/index.html">
 <meta property="og:site_name" content="Okay个人博客">
-<meta property="og:description" content="（java基础学习笔记）JAVA类变量和类方法一、类变量 1.什么是类变量 类变量：也叫静态变量或静态属性，是该类的声明的所有对象共享的变量，所有该类声明的对象去访问它时，取到的都是相同的值，同样任何该类的对象去修改它时，修改的也是同一个变量。 2.怎么定义类变量 定义语法：（1）访问修饰符  static 数据类型 变量名；（推荐）        （2）static 访问修饰符 数据类型 变量名">
+<meta property="og:description" content="为什么安装jdk后要配置环境变量？安装jdk步骤网上很多，这里我就不展开说了，今天我要说的是为什么安装jdk后要配置环境变量。 让我们带着：是什么？为什么？怎么做？这3个疑问继续看下去 （1）安装jdk可以直接用吗？ 安装jdk后（还没进行环境变量配置）以后我们打开命令行模式（win+r 然后输入cmd回车）    我们进入命令行模式    输入java，然后按回车键     发现提示java命令">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-08-06T00:54:44.000Z">
-<meta property="article:modified_time" content="2023-02-12T03:29:36.079Z">
+<meta property="og:image" content="http://example.com/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70.png">
+<meta property="og:image" content="http://example.com/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-16761700595875.png">
+<meta property="og:image" content="http://example.com/2021/07/06/article_jdk/20210711195253336.png">
+<meta property="og:image" content="http://example.com/2021/07/06/article_jdk/20210711195430878.png">
+<meta property="og:image" content="http://example.com/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70.png">
+<meta property="og:image" content="http://example.com/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-16761702245057.png">
+<meta property="og:image" content="http://example.com/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617022947610.png">
+<meta property="og:image" content="http://example.com/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617023745613.png">
+<meta property="og:image" content="http://example.com/2021/07/06/article_jdk/20210711200844105.png">
+<meta property="og:image" content="http://example.com/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617025148018.png">
+<meta property="og:image" content="http://example.com/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617026392521.png">
+<meta property="og:image" content="http://example.com/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617027644224.png">
+<meta property="og:image" content="http://example.com/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617028345327.png">
+<meta property="og:image" content="http://example.com/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617028921930.png">
+<meta property="og:image" content="http://example.com/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617029785233.png">
+<meta property="og:image" content="http://example.com/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617030431236.png">
+<meta property="og:image" content="http://example.com/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617031111539.png">
+<meta property="article:published_time" content="2021-07-06T00:54:44.000Z">
+<meta property="article:modified_time" content="2023-02-12T03:35:11.056Z">
 <meta property="article:author" content="Okay">
 <meta property="article:tag" content="java基础">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70.png">
   
   
-  <title>（java基础学习笔记）JAVA类变量和类方法 - Okay个人博客</title>
+  <title>为什么安装jdk后要配置环境变量？ - Okay个人博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -176,7 +194,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="（java基础学习笔记）JAVA类变量和类方法">
+            <span class="h2" id="subtitle" title="为什么安装jdk后要配置环境变量？">
               
             </span>
 
@@ -186,8 +204,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-08-06 08:54" pubdate>
-        2021年8月6日 早上
+      <time datetime="2021-07-06 08:54" pubdate>
+        2021年7月6日 早上
       </time>
     </span>
   
@@ -197,7 +215,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.5k 字
+      1.2k 字
     </span>
   
 
@@ -206,7 +224,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      13 分钟
+      11 分钟
     </span>
   
 
@@ -243,52 +261,90 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">（java基础学习笔记）JAVA类变量和类方法</h1>
+            <h1 style="display: none">为什么安装jdk后要配置环境变量？</h1>
             
             <div class="markdown-body">
-              <h3 id="（java基础学习笔记）JAVA类变量和类方法"><a href="#（java基础学习笔记）JAVA类变量和类方法" class="headerlink" title="（java基础学习笔记）JAVA类变量和类方法"></a>（java基础学习笔记）JAVA类变量和类方法</h3><p>一、类变量</p>
-<p>1.什么是类变量</p>
-<p>类变量：也叫静态变量或静态属性，是该类的声明的所有对象共享的变量，所有该类声明的对象去访问它时，取到的都是相同的值，同样任何该类的对象去修改它时，修改的也是同一个变量。</p>
-<p>2.怎么定义类变量</p>
-<p>定义语法：（1）访问修饰符  static 数据类型 变量名；（推荐）</p>
-<div class="code-wrapper"><pre><code class="hljs">       （2）static 访问修饰符 数据类型 变量名；
-</code></pre></div>
-<p>3.怎么访问类变量</p>
-<p>（1）对象.类变量名</p>
-<p>（2）类.类对象名（推荐）</p>
-<p>注：静态变量的访问修饰符的访问权限和普通属性一样</p>
-<figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.hspedu.static_;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">VisitStatic</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        System.out.println(A.age);<span class="hljs-comment">//18</span><br>        <span class="hljs-type">A</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">A</span>();<br>        <span class="hljs-type">A</span> <span class="hljs-variable">a1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">A</span>();<br>        System.out.println(a.age);<span class="hljs-comment">//18</span><br>        a1.age = <span class="hljs-number">2</span>;<br>        System.out.println(A.age);<span class="hljs-comment">//2</span><br>        System.out.println(a.age);<span class="hljs-comment">//2</span><br>        System.out.println(a1.age);<span class="hljs-comment">//2</span><br>    &#125;<br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">A</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> age=<span class="hljs-number">18</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+              <h3 id="为什么安装jdk后要配置环境变量？"><a href="#为什么安装jdk后要配置环境变量？" class="headerlink" title="为什么安装jdk后要配置环境变量？"></a>为什么安装jdk后要配置环境变量？</h3><p>安装jdk步骤网上很多，这里我就不展开说了，今天我要说的是为什么安装jdk后要配置环境变量。</p>
+<p>让我们带着：是什么？为什么？怎么做？这3个疑问继续看下去</p>
+<p>（1）安装jdk可以直接用吗？</p>
+<p>安装jdk后（还没进行环境变量配置）以后我们打开命令行模式（win+r 然后输入cmd回车）</p>
+<img src="/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
 
-<p>4.类变量使用细节</p>
-<p>（1）什么时候需要用类变量</p>
-<p>当需要所有对象都共享一个变量的时候，如，定义一个学生类，要统计所有学生交的学费。</p>
-<p>（2）类变量（静态属性&#x2F;静态变量）和非静态变量的区别</p>
-<p>类变量是该类的所有对象共享的，而非静态变量是每个对象独享的。</p>
-<p>（3）加上static称为类变量或静态变量或静态属性，否则称为实例变量&#x2F;普通变量&#x2F;非静态变量…</p>
-<p>（4）类变量可以通过 类名.类变量名 或  对象名.类变量名来访问，但推荐用第一种（前提是满足访问修饰符的访问权限和范围）</p>
-<p>（5）实例变量不能通过类.变量名来访问</p>
-<p>（6）类变量是在类加载的时候就初始化了，也就是说，即使你没有创建对象，只要类加载了，就可以使用类变量</p>
-<p>（7）类变量的生命周期是随类的加载开始，随类的消亡而销毁的。</p>
-<p>二、类方法</p>
-<p>1.类方法也叫静态方法</p>
-<p>2.定义类方法形式：（推荐）（1）访问修饰符 static 数据返回类型 方法名（）{ }</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">（<span class="hljs-number">2</span>）<span class="hljs-keyword">static</span> 访问修饰符 数据返回类型 方法名（）&#123; &#125;<br></code></pre></td></tr></table></figure>
+<p> 我们进入命令行模式</p>
+<img src="/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-16761700595875.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
 
-<p>3.类方法的调用</p>
-<p>类.类方法名 或 对象名.类方法名（前提是 满足访问修饰符的访问权限和范围）</p>
-<p>4.类方法的应用场景</p>
-<p>（1）当方法不涉及到任何对象相关的成员，可以将方法设计成静态方法。</p>
-<p>（2）实际开发过程中，往往将一些通用的方法设计成静态方法，这样不用创建对象就能使用，比较方便，例如，冒泡，计算器…</p>
-<p>5.类方法使用细节</p>
-<p>（1）类方法和普通方法都是随着类的加载而加载，将结构信息存储在方法区中</p>
-<p>类方法中没有this的参数</p>
-<p>普通方法中隐含着this参数</p>
-<p>（2）类方法可以通过类名调用，也可以通过对象名调用。</p>
-<p>（3）普通方法需要通过对象名调用，即要先声明对象，再调用（例：对象名.方法名（参数）），不能通过类名调用。</p>
-<p>（4）类方法中不允许使用和对象有关的关键字，比如this和super。普通方法可以。</p>
-<p>（5）类方法（静态方法）只能访问静态变量或静态方法</p>
-<p>（6）普通成员方法，既可以访问非静态成员，也可以访问静态成员</p>
-<p>小结：静态方法，只能访问静态的成员，非静态方法，可以访问静态成员和非静态成员(必须遵守访问权限)</p>
+<p> 输入java，然后按回车键</p>
+ <img src="/2021/07/06/article_jdk/20210711195253336.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
+
+<p><img src="/2021/07/06/article_jdk/20210711195430878.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>发现提示java命令不能运行 </p>
+<p>下面重点来了</p>
+<p>我们打开你安装jdk目录下的bin文件夹</p>
+ <img src="/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
+
+ 
+
+<p>双击bin文件夹进入bin目录下 </p>
+ <img src="/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-16761702245057.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
+
+ 
+
+<p>在把目录位置改成cmd，则在这个目录下进入命令行模式</p>
+ <img src="/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617022947610.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
+
+ 
+
+ 
+
+ <img src="/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617023745613.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
+
+<p> jdk的bin目录下的命令行模式输入java,回车</p>
+<img src="/2021/07/06/article_jdk/20210711200844105.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
+
+ <img src="/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617025148018.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom: 33%;">
+
+<p> 我们发现安装jdk后没有进行环境变量配置，在你安装jdk的目录下的bin目录下打开命令行是可以执行java命令的，而在别的目录不可以执行java命令。</p>
+<p>为什么？？？？？</p>
+<p>这是因为我们执行java命令需要开发工具集，而这些工具文件在jdk目录下的bin目录里面，所以我们在bin目录下可以成功执行java命令，其他目录不行。</p>
+<p>怎么做？？？？</p>
+<p>去配置环境变量！！！我们配置环境变量的目的就是让java命令在任何目录下都可以执行，或者说让它执行时跳转到jdk的bin目录下。</p>
+<p>（2）配置环境变量</p>
+<p>打开资源管理器右键点击属性</p>
+<img src="/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617026392521.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom: 33%;">
+
+ 
+
+<p> 点击高级系统设置</p>
+ <img src="/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617027644224.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
+
+<p> 点击”高级”任何点击”环境变量”</p>
+ <img src="/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617028345327.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom: 33%;">
+
+<p> 在下方系统变量那里点击编辑</p>
+ <img src="/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617028921930.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
+
+<p> 变量名输入JAVA_HOME</p>
+<p>变量值为你安装jdk的目录，然后点击“确定”</p>
+<p>增加JAVA_HOME环境变量，指向jdk的安装目录</p>
+ <img src="/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617029785233.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
+
+ 
+
+<p> 选中Path然后点击编辑</p>
+ <img src="/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617030431236.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
+
+<p> 点击新建然后输入%JAVA_HOME%\bin</p>
+<p>点击“确定”完成配置</p>
+<p>%JAVA_HOME%\bin这个的意思是告诉系统要到JAVA_HOME这个指向的目录下的bin目录去执行文件</p>
+ <img src="/2021/07/06/article_jdk/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h3aG9rYXk=,size_16,color_FFFFFF,t_70-167617031111539.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom: 33%;">
+
+ 
+
+<p> 到这里环境变量配置就结束了，以后我们在任何目录下都可以执行java命令，是不是很神奇</p>
+<p>总结：</p>
+<p>1、如果不配置环境变量要到所安装jdk的目录下的bin才能执行，<br>因为把jdk执行的指令在所安装jdk的目录下的bin下，所以要在bin下执行cmd里面java命令，<br>配置环境变量的目的是在任何目录下都能执行java命令，不用到jdk的bin目录下就能执行</p>
+<p>2、配置环境变量：<br>（1）我的电脑–属性–高级系统设置–环境变量<br>（2）增加JAVA_HOME环境变量，指向jdk的安装目录 如 d:\program\jdk8<br>（3）编辑path环境变量，增加%JAVA_HOME%\bin    （告诉系统要到JAVA_HOME这个指向的目录下的bin目录去执行文件）</p>
+<p>tip:这样以后更改jdk安装目录只需要改JAVA_HOME里面的目录就行了<br>————————————————<br>版权声明：本文为CSDN博主「尾号2000」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/xwhokay/article/details/118658735">https://blog.csdn.net/xwhokay/article/details/118658735</a></p>
 
             </div>
             <hr>
@@ -323,21 +379,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/08/10/article_java2/">
+                      <a href="/2021/08/06/article_java1/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">（java基础学习）代码块</span>
+                        <span class="hidden-mobile">（java基础学习笔记）JAVA类变量和类方法</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2021/07/06/article_jdk/">
-                        <span class="hidden-mobile">为什么安装jdk后要配置环境变量？</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>

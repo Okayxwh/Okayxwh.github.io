@@ -16,21 +16,25 @@
   <meta name="author" content="Okay">
   <meta name="keywords" content="">
   
-    <meta name="description" content="（java基础学习笔记）JAVA类变量和类方法一、类变量 1.什么是类变量 类变量：也叫静态变量或静态属性，是该类的声明的所有对象共享的变量，所有该类声明的对象去访问它时，取到的都是相同的值，同样任何该类的对象去修改它时，修改的也是同一个变量。 2.怎么定义类变量 定义语法：（1）访问修饰符  static 数据类型 变量名；（推荐）        （2）static 访问修饰符 数据类型 变量名">
+    <meta name="description" content="idea maven创建web项目特别慢的解决方案maven创建一个项目的时候需要下载一个文件archetype-catalog.xml， 用idea创建maven项目时，idea会根据maven archetype的配置，执行mvn archetype:generate命令，该命令执行时，需要指定一个archetype-catalog.xml文件。 该命令的参数-DarchetypeCatalo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="（java基础学习笔记）JAVA类变量和类方法">
-<meta property="og:url" content="http://example.com/2021/08/06/article_java1/index.html">
+<meta property="og:title" content="idea maven创建web项目特别慢的解决方案">
+<meta property="og:url" content="http://example.com/2022/01/10/article_problem01/index.html">
 <meta property="og:site_name" content="Okay个人博客">
-<meta property="og:description" content="（java基础学习笔记）JAVA类变量和类方法一、类变量 1.什么是类变量 类变量：也叫静态变量或静态属性，是该类的声明的所有对象共享的变量，所有该类声明的对象去访问它时，取到的都是相同的值，同样任何该类的对象去修改它时，修改的也是同一个变量。 2.怎么定义类变量 定义语法：（1）访问修饰符  static 数据类型 变量名；（推荐）        （2）static 访问修饰符 数据类型 变量名">
+<meta property="og:description" content="idea maven创建web项目特别慢的解决方案maven创建一个项目的时候需要下载一个文件archetype-catalog.xml， 用idea创建maven项目时，idea会根据maven archetype的配置，执行mvn archetype:generate命令，该命令执行时，需要指定一个archetype-catalog.xml文件。 该命令的参数-DarchetypeCatalo">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-08-06T00:54:44.000Z">
-<meta property="article:modified_time" content="2023-02-12T03:29:36.079Z">
+<meta property="og:image" content="http://example.com/2022/01/10/article_problem01/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bC-5Y-3MjAwMA==,size_20,color_FFFFFF,t_70,g_se,x_16.png">
+<meta property="og:image" content="http://example.com/2022/01/10/article_problem01/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bC-5Y-3MjAwMA==,size_20,color_FFFFFF,t_70,g_se,x_16-16761723606943.png">
+<meta property="og:image" content="http://example.com/2022/01/10/article_problem01/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bC-5Y-3MjAwMA==,size_20,color_FFFFFF,t_70,g_se,x_16-16761723760776.png">
+<meta property="article:published_time" content="2022-01-10T00:54:44.000Z">
+<meta property="article:modified_time" content="2023-02-12T03:41:14.146Z">
 <meta property="article:author" content="Okay">
-<meta property="article:tag" content="java基础">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2022/01/10/article_problem01/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bC-5Y-3MjAwMA==,size_20,color_FFFFFF,t_70,g_se,x_16.png">
   
   
-  <title>（java基础学习笔记）JAVA类变量和类方法 - Okay个人博客</title>
+  <title>idea maven创建web项目特别慢的解决方案 - Okay个人博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -176,7 +180,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="（java基础学习笔记）JAVA类变量和类方法">
+            <span class="h2" id="subtitle" title="idea maven创建web项目特别慢的解决方案">
               
             </span>
 
@@ -186,8 +190,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-08-06 08:54" pubdate>
-        2021年8月6日 早上
+      <time datetime="2022-01-10 08:54" pubdate>
+        2022年1月10日 早上
       </time>
     </span>
   
@@ -197,7 +201,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.5k 字
+      674 字
     </span>
   
 
@@ -206,7 +210,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      13 分钟
+      6 分钟
     </span>
   
 
@@ -243,52 +247,25 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">（java基础学习笔记）JAVA类变量和类方法</h1>
+            <h1 style="display: none">idea maven创建web项目特别慢的解决方案</h1>
             
             <div class="markdown-body">
-              <h3 id="（java基础学习笔记）JAVA类变量和类方法"><a href="#（java基础学习笔记）JAVA类变量和类方法" class="headerlink" title="（java基础学习笔记）JAVA类变量和类方法"></a>（java基础学习笔记）JAVA类变量和类方法</h3><p>一、类变量</p>
-<p>1.什么是类变量</p>
-<p>类变量：也叫静态变量或静态属性，是该类的声明的所有对象共享的变量，所有该类声明的对象去访问它时，取到的都是相同的值，同样任何该类的对象去修改它时，修改的也是同一个变量。</p>
-<p>2.怎么定义类变量</p>
-<p>定义语法：（1）访问修饰符  static 数据类型 变量名；（推荐）</p>
-<div class="code-wrapper"><pre><code class="hljs">       （2）static 访问修饰符 数据类型 变量名；
-</code></pre></div>
-<p>3.怎么访问类变量</p>
-<p>（1）对象.类变量名</p>
-<p>（2）类.类对象名（推荐）</p>
-<p>注：静态变量的访问修饰符的访问权限和普通属性一样</p>
-<figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.hspedu.static_;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">VisitStatic</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        System.out.println(A.age);<span class="hljs-comment">//18</span><br>        <span class="hljs-type">A</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">A</span>();<br>        <span class="hljs-type">A</span> <span class="hljs-variable">a1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">A</span>();<br>        System.out.println(a.age);<span class="hljs-comment">//18</span><br>        a1.age = <span class="hljs-number">2</span>;<br>        System.out.println(A.age);<span class="hljs-comment">//2</span><br>        System.out.println(a.age);<span class="hljs-comment">//2</span><br>        System.out.println(a1.age);<span class="hljs-comment">//2</span><br>    &#125;<br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">A</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> age=<span class="hljs-number">18</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+              <h3 id="idea-maven创建web项目特别慢的解决方案"><a href="#idea-maven创建web项目特别慢的解决方案" class="headerlink" title="idea maven创建web项目特别慢的解决方案"></a>idea maven创建web项目特别慢的解决方案</h3><p>maven创建一个项目的时候需要下载一个文件archetype-catalog.xml，</p>
+<p>用idea创建maven项目时，idea会根据maven archetype的配置，执行mvn archetype:generate命令，该命令执行时，需要指定一个archetype-catalog.xml文件。</p>
+<p>该命令的参数-DarchetypeCatalog，可选值为：remote，internal ，local等，用来指定archetype-catalog.xml文件从哪里获取。</p>
+<p>默认为remote，即从 <a target="_blank" rel="noopener" href="https://repo1.maven.org/maven2/archetype-catalog.xml%E8%B7%AF%E5%BE%84%E4%B8%8B%E8%BD%BDarchetype-catalog.xml%E6%96%87%E4%BB%B6%E3%80%82">https://repo1.maven.org/maven2/archetype-catalog.xml路径下载archetype-catalog.xml文件。</a></p>
+<p><a target="_blank" rel="noopener" href="https://repo1.maven.org/maven2/archetype-catalog.xml">https://repo1.maven.org/maven2/archetype-catalog.xml</a> 文件约为10M，从maven中央仓库下载（在国外），就会导致下载速度很慢，从而创建过程经常会被卡住。</p>
+<p>解决方案：下载一个文件archetype-catalog.xml到你的本地仓库根目录（文件下载在最后），你的仓库位置如图查看</p>
+<img src="/2022/01/10/article_problem01/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bC-5Y-3MjAwMA==,size_20,color_FFFFFF,t_70,g_se,x_16.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
 
-<p>4.类变量使用细节</p>
-<p>（1）什么时候需要用类变量</p>
-<p>当需要所有对象都共享一个变量的时候，如，定义一个学生类，要统计所有学生交的学费。</p>
-<p>（2）类变量（静态属性&#x2F;静态变量）和非静态变量的区别</p>
-<p>类变量是该类的所有对象共享的，而非静态变量是每个对象独享的。</p>
-<p>（3）加上static称为类变量或静态变量或静态属性，否则称为实例变量&#x2F;普通变量&#x2F;非静态变量…</p>
-<p>（4）类变量可以通过 类名.类变量名 或  对象名.类变量名来访问，但推荐用第一种（前提是满足访问修饰符的访问权限和范围）</p>
-<p>（5）实例变量不能通过类.变量名来访问</p>
-<p>（6）类变量是在类加载的时候就初始化了，也就是说，即使你没有创建对象，只要类加载了，就可以使用类变量</p>
-<p>（7）类变量的生命周期是随类的加载开始，随类的消亡而销毁的。</p>
-<p>二、类方法</p>
-<p>1.类方法也叫静态方法</p>
-<p>2.定义类方法形式：（推荐）（1）访问修饰符 static 数据返回类型 方法名（）{ }</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">（<span class="hljs-number">2</span>）<span class="hljs-keyword">static</span> 访问修饰符 数据返回类型 方法名（）&#123; &#125;<br></code></pre></td></tr></table></figure>
+<p>然后把archetype-catalog.xml拉到你的仓库</p>
+<img src="/2022/01/10/article_problem01/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bC-5Y-3MjAwMA==,size_20,color_FFFFFF,t_70,g_se,x_16-16761723606943.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom:33%;">
 
-<p>3.类方法的调用</p>
-<p>类.类方法名 或 对象名.类方法名（前提是 满足访问修饰符的访问权限和范围）</p>
-<p>4.类方法的应用场景</p>
-<p>（1）当方法不涉及到任何对象相关的成员，可以将方法设计成静态方法。</p>
-<p>（2）实际开发过程中，往往将一些通用的方法设计成静态方法，这样不用创建对象就能使用，比较方便，例如，冒泡，计算器…</p>
-<p>5.类方法使用细节</p>
-<p>（1）类方法和普通方法都是随着类的加载而加载，将结构信息存储在方法区中</p>
-<p>类方法中没有this的参数</p>
-<p>普通方法中隐含着this参数</p>
-<p>（2）类方法可以通过类名调用，也可以通过对象名调用。</p>
-<p>（3）普通方法需要通过对象名调用，即要先声明对象，再调用（例：对象名.方法名（参数）），不能通过类名调用。</p>
-<p>（4）类方法中不允许使用和对象有关的关键字，比如this和super。普通方法可以。</p>
-<p>（5）类方法（静态方法）只能访问静态变量或静态方法</p>
-<p>（6）普通成员方法，既可以访问非静态成员，也可以访问静态成员</p>
-<p>小结：静态方法，只能访问静态的成员，非静态方法，可以访问静态成员和非静态成员(必须遵守访问权限)</p>
+<p>然后在idea中按照下图设置-DarchetypeCatalog&#x3D;local就🆗啦 </p>
+<img src="/2022/01/10/article_problem01/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bC-5Y-3MjAwMA==,size_20,color_FFFFFF,t_70,g_se,x_16-16761723760776.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom: 33%;">
+
+<p>archetype-catalog.xml下载如下</p>
+<p> 链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1WMS1yjuOUPd3nnoaGzCKRg">https://pan.baidu.com/s/1WMS1yjuOUPd3nnoaGzCKRg</a><br>提取码：wef0 </p>
 
             </div>
             <hr>
@@ -298,7 +275,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+                      <a class="hover-with-bg" href="/categories/Java/">Java</a>
                     
                   </div>
                 
@@ -306,7 +283,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/java%E5%9F%BA%E7%A1%80/">java基础</a>
+                      <a class="hover-with-bg" href="/tags/java/">java</a>
                     
                   </div>
                 
@@ -323,9 +300,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/08/10/article_java2/">
+                      <a href="/2022/03/01/article_mysql/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">（java基础学习）代码块</span>
+                        <span class="hidden-mobile">MySQL学习篇</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -333,8 +310,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/07/06/article_jdk/">
-                        <span class="hidden-mobile">为什么安装jdk后要配置环境变量？</span>
+                      <a href="/2021/10/17/article_map/">
+                        <span class="hidden-mobile">JAVA集合学习之Map篇</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

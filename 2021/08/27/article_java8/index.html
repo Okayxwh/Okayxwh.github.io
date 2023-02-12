@@ -16,21 +16,26 @@
   <meta name="author" content="Okay">
   <meta name="keywords" content="">
   
-    <meta name="description" content="（java基础学习笔记）JAVA类变量和类方法一、类变量 1.什么是类变量 类变量：也叫静态变量或静态属性，是该类的声明的所有对象共享的变量，所有该类声明的对象去访问它时，取到的都是相同的值，同样任何该类的对象去修改它时，修改的也是同一个变量。 2.怎么定义类变量 定义语法：（1）访问修饰符  static 数据类型 变量名；（推荐）        （2）static 访问修饰符 数据类型 变量名">
+    <meta name="description" content="（java基础）枚举改成枚举  枚举英文enumerarion1.分析问题 （1）创建Season 对象有如下特点 （2）季节的值是有限的几个值(spring, summer, autumn, winter) （3）只读，不需要修改。 2.解决方案 枚举是一组常量的集合。可以这里理解：枚举属于一种特殊的类，里面只包含一组有限的特定的对象。  3.枚举的两种实现形式 （1）自定义类实现枚举   例如">
 <meta property="og:type" content="article">
-<meta property="og:title" content="（java基础学习笔记）JAVA类变量和类方法">
-<meta property="og:url" content="http://example.com/2021/08/06/article_java1/index.html">
+<meta property="og:title" content="（java基础）枚举">
+<meta property="og:url" content="http://example.com/2021/08/27/article_java8/index.html">
 <meta property="og:site_name" content="Okay个人博客">
-<meta property="og:description" content="（java基础学习笔记）JAVA类变量和类方法一、类变量 1.什么是类变量 类变量：也叫静态变量或静态属性，是该类的声明的所有对象共享的变量，所有该类声明的对象去访问它时，取到的都是相同的值，同样任何该类的对象去修改它时，修改的也是同一个变量。 2.怎么定义类变量 定义语法：（1）访问修饰符  static 数据类型 变量名；（推荐）        （2）static 访问修饰符 数据类型 变量名">
+<meta property="og:description" content="（java基础）枚举改成枚举  枚举英文enumerarion1.分析问题 （1）创建Season 对象有如下特点 （2）季节的值是有限的几个值(spring, summer, autumn, winter) （3）只读，不需要修改。 2.解决方案 枚举是一组常量的集合。可以这里理解：枚举属于一种特殊的类，里面只包含一组有限的特定的对象。  3.枚举的两种实现形式 （1）自定义类实现枚举   例如">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-08-06T00:54:44.000Z">
-<meta property="article:modified_time" content="2023-02-12T03:29:36.079Z">
+<meta property="og:image" content="http://example.com/2021/08/27/article_java8/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5bC-5Y-3MjAwMA==,size_16,color_FFFFFF,t_70,g_se,x_16.png">
+<meta property="og:image" content="http://example.com/2021/08/27/article_java8/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5bC-5Y-3MjAwMA==,size_18,color_FFFFFF,t_70,g_se,x_16.png">
+<meta property="og:image" content="http://example.com/2021/08/27/article_java8/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5bC-5Y-3MjAwMA==,size_20,color_FFFFFF,t_70,g_se,x_16.png">
+<meta property="og:image" content="http://example.com/2021/08/27/article_java8/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5bC-5Y-3MjAwMA==,size_20,color_FFFFFF,t_70,g_se,x_16-16761720652507.png">
+<meta property="article:published_time" content="2021-08-27T00:54:44.000Z">
+<meta property="article:modified_time" content="2023-02-12T03:39:57.681Z">
 <meta property="article:author" content="Okay">
 <meta property="article:tag" content="java基础">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2021/08/27/article_java8/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5bC-5Y-3MjAwMA==,size_16,color_FFFFFF,t_70,g_se,x_16.png">
   
   
-  <title>（java基础学习笔记）JAVA类变量和类方法 - Okay个人博客</title>
+  <title>（java基础）枚举 - Okay个人博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -176,7 +181,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="（java基础学习笔记）JAVA类变量和类方法">
+            <span class="h2" id="subtitle" title="（java基础）枚举">
               
             </span>
 
@@ -186,8 +191,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-08-06 08:54" pubdate>
-        2021年8月6日 早上
+      <time datetime="2021-08-27 08:54" pubdate>
+        2021年8月27日 早上
       </time>
     </span>
   
@@ -197,7 +202,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.5k 字
+      800 字
     </span>
   
 
@@ -206,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      13 分钟
+      7 分钟
     </span>
   
 
@@ -243,53 +248,42 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">（java基础学习笔记）JAVA类变量和类方法</h1>
+            <h1 style="display: none">（java基础）枚举</h1>
             
             <div class="markdown-body">
-              <h3 id="（java基础学习笔记）JAVA类变量和类方法"><a href="#（java基础学习笔记）JAVA类变量和类方法" class="headerlink" title="（java基础学习笔记）JAVA类变量和类方法"></a>（java基础学习笔记）JAVA类变量和类方法</h3><p>一、类变量</p>
-<p>1.什么是类变量</p>
-<p>类变量：也叫静态变量或静态属性，是该类的声明的所有对象共享的变量，所有该类声明的对象去访问它时，取到的都是相同的值，同样任何该类的对象去修改它时，修改的也是同一个变量。</p>
-<p>2.怎么定义类变量</p>
-<p>定义语法：（1）访问修饰符  static 数据类型 变量名；（推荐）</p>
-<div class="code-wrapper"><pre><code class="hljs">       （2）static 访问修饰符 数据类型 变量名；
-</code></pre></div>
-<p>3.怎么访问类变量</p>
-<p>（1）对象.类变量名</p>
-<p>（2）类.类对象名（推荐）</p>
-<p>注：静态变量的访问修饰符的访问权限和普通属性一样</p>
-<figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.hspedu.static_;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">VisitStatic</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        System.out.println(A.age);<span class="hljs-comment">//18</span><br>        <span class="hljs-type">A</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">A</span>();<br>        <span class="hljs-type">A</span> <span class="hljs-variable">a1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">A</span>();<br>        System.out.println(a.age);<span class="hljs-comment">//18</span><br>        a1.age = <span class="hljs-number">2</span>;<br>        System.out.println(A.age);<span class="hljs-comment">//2</span><br>        System.out.println(a.age);<span class="hljs-comment">//2</span><br>        System.out.println(a1.age);<span class="hljs-comment">//2</span><br>    &#125;<br>&#125;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">A</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> age=<span class="hljs-number">18</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+              <h3 id="（java基础）枚举"><a href="#（java基础）枚举" class="headerlink" title="（java基础）枚举"></a>（java基础）枚举</h3><p>改成枚举</p>
+<p> 枚举英文enumerarion<br>1.分析问题</p>
+<p>（1）创建Season 对象有如下特点</p>
+<p>（2）季节的值是有限的几个值(spring, summer, autumn, winter)</p>
+<p>（3）只读，不需要修改。</p>
+<p>2.解决方案</p>
+<p>枚举是一组常量的集合。可以这里理解：枚举属于一种特殊的类，里面只包含一组有限的特定的对象。</p>
+<p> 3.枚举的两种实现形式</p>
+<p>（1）自定义类实现枚举</p>
+<p><img src="/2021/08/27/article_java8/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5bC-5Y-3MjAwMA==,size_16,color_FFFFFF,t_70,g_se,x_16.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p> 例如上面的第一张图</p>
+<p>（2）使用 enum 关键字实现枚举</p>
+<p>例如上面第2、3张图</p>
+<p> 4.枚举的注意事项</p>
+<p>（1）当我们使用enum 关键字开发一个枚举类时，默认会继承 Enum 类, 而且是一个final 类[如何证明],老师使用javap  工具来演示</p>
+<p>（2）传统的 public static final Season2 SPRING &#x3D; new Season2(“春天”, “温暖”); 简化成 SPRING(“春天”, “温暖”)， 这里必须知道，它调用的是哪个构造器.</p>
+<p>（3）如果使用无参构造器 创建 枚举对象，则实参列表和小括号都可以省略</p>
+<p>（4）当有多个枚举对象时，使用,间隔，最后有一个分号结尾</p>
+<p>（5）枚举对象必须放在枚举类的行首。</p>
+<p>5.enum常用方法</p>
+<p>（1）说明：使用关键字 enum 时，会隐式继承 Enum 类,  这样我们就可以使用 Enum 类相关的方法。</p>
+<p><img src="/2021/08/27/article_java8/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5bC-5Y-3MjAwMA==,size_18,color_FFFFFF,t_70,g_se,x_16.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>（2）enum常用方法</p>
+<p> （1）toString():Enum 类已经重写过了，返回的是当前对象名,子类可以重写该方法，用于返回对象的属性信息</p>
+<p>（2）name()：返回当前对象名（常量名），子类中不能重写</p>
+<p>（3）ordinal（）：返回当前对象的位置号，默认从 0 开始</p>
+<p>（4）values（）：返回当前枚举类中所有的常量（values要反编译才能查到这个方法，追踪enum类没有显示）</p>
+<p>（5）valueOf（）：将字符串转换成枚举对象，要求字符串必须为已有的常量名，否则报异常！</p>
+<p>（6）compareTo（）：比较两个枚举常量，比较的就是编号！</p>
+<p>例子在下图</p>
+<img src="/2021/08/27/article_java8/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5bC-5Y-3MjAwMA==,size_20,color_FFFFFF,t_70,g_se,x_16.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom: 33%;">
 
-<p>4.类变量使用细节</p>
-<p>（1）什么时候需要用类变量</p>
-<p>当需要所有对象都共享一个变量的时候，如，定义一个学生类，要统计所有学生交的学费。</p>
-<p>（2）类变量（静态属性&#x2F;静态变量）和非静态变量的区别</p>
-<p>类变量是该类的所有对象共享的，而非静态变量是每个对象独享的。</p>
-<p>（3）加上static称为类变量或静态变量或静态属性，否则称为实例变量&#x2F;普通变量&#x2F;非静态变量…</p>
-<p>（4）类变量可以通过 类名.类变量名 或  对象名.类变量名来访问，但推荐用第一种（前提是满足访问修饰符的访问权限和范围）</p>
-<p>（5）实例变量不能通过类.变量名来访问</p>
-<p>（6）类变量是在类加载的时候就初始化了，也就是说，即使你没有创建对象，只要类加载了，就可以使用类变量</p>
-<p>（7）类变量的生命周期是随类的加载开始，随类的消亡而销毁的。</p>
-<p>二、类方法</p>
-<p>1.类方法也叫静态方法</p>
-<p>2.定义类方法形式：（推荐）（1）访问修饰符 static 数据返回类型 方法名（）{ }</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">（<span class="hljs-number">2</span>）<span class="hljs-keyword">static</span> 访问修饰符 数据返回类型 方法名（）&#123; &#125;<br></code></pre></td></tr></table></figure>
-
-<p>3.类方法的调用</p>
-<p>类.类方法名 或 对象名.类方法名（前提是 满足访问修饰符的访问权限和范围）</p>
-<p>4.类方法的应用场景</p>
-<p>（1）当方法不涉及到任何对象相关的成员，可以将方法设计成静态方法。</p>
-<p>（2）实际开发过程中，往往将一些通用的方法设计成静态方法，这样不用创建对象就能使用，比较方便，例如，冒泡，计算器…</p>
-<p>5.类方法使用细节</p>
-<p>（1）类方法和普通方法都是随着类的加载而加载，将结构信息存储在方法区中</p>
-<p>类方法中没有this的参数</p>
-<p>普通方法中隐含着this参数</p>
-<p>（2）类方法可以通过类名调用，也可以通过对象名调用。</p>
-<p>（3）普通方法需要通过对象名调用，即要先声明对象，再调用（例：对象名.方法名（参数）），不能通过类名调用。</p>
-<p>（4）类方法中不允许使用和对象有关的关键字，比如this和super。普通方法可以。</p>
-<p>（5）类方法（静态方法）只能访问静态变量或静态方法</p>
-<p>（6）普通成员方法，既可以访问非静态成员，也可以访问静态成员</p>
-<p>小结：静态方法，只能访问静态的成员，非静态方法，可以访问静态成员和非静态成员(必须遵守访问权限)</p>
-
+<img src="/2021/08/27/article_java8/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5bC-5Y-3MjAwMA==,size_20,color_FFFFFF,t_70,g_se,x_16-16761720652507.png" srcset="/img/loading.gif" lazyload alt="img" style="zoom: 33%;">
             </div>
             <hr>
             <div>
@@ -323,9 +317,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/08/10/article_java2/">
+                      <a href="/2021/10/06/article_list/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">（java基础学习）代码块</span>
+                        <span class="hidden-mobile">JAVA集合学习之List篇</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -333,8 +327,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/07/06/article_jdk/">
-                        <span class="hidden-mobile">为什么安装jdk后要配置环境变量？</span>
+                      <a href="/2021/08/27/article_java9/">
+                        <span class="hidden-mobile">（java基础学习）包装类</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
