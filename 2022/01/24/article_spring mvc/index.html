@@ -23,21 +23,11 @@
 <meta property="og:site_name" content="Okay个人博客">
 <meta property="og:description" content="三、SpringMVC1、SpringMVC简介1.1、什么是MVCMVC是一种软件架构的思想，将软件按照模型、视图、控制器来划分 M：Model，模型层，指工程中的JavaBean，作用是处理数据 JavaBean分为两类：  一类称为实体类Bean：专门存储业务数据的，如 Student、User 等 一类称为业务处理 Bean：指 Service 或 Dao 对象，专门用于处理业务逻辑和数据">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/01/24/article_spring%20mvc/article_ssm%5C29.png">
-<meta property="og:image" content="http://example.com/2022/01/24/article_spring%20mvc/article_ssm%5C30.png">
-<meta property="og:image" content="http://example.com/2022/01/24/article_spring%20mvc/article_ssm%5C31.png">
-<meta property="og:image" content="http://example.com/2022/01/24/article_spring%20mvc/article_ssm%5C32.png">
-<meta property="og:image" content="http://example.com/2022/01/24/article_spring%20mvc/article_ssm%5C33.png">
-<meta property="og:image" content="http://example.com/2022/01/24/article_spring%20mvc/article_ssm%5C34.png">
-<meta property="og:image" content="http://example.com/2022/01/24/article_spring%20mvc/article_ssm%5C35.png">
-<meta property="og:image" content="http://example.com/2022/01/24/article_spring%20mvc/article_ssm%5C36.png">
-<meta property="og:image" content="http://example.com/2022/01/24/article_spring%20mvc/article_ssm%5C37.png">
 <meta property="article:published_time" content="2022-01-24T00:54:44.000Z">
-<meta property="article:modified_time" content="2023-02-12T05:45:09.220Z">
+<meta property="article:modified_time" content="2023-02-12T05:52:41.123Z">
 <meta property="article:author" content="Okay">
 <meta property="article:tag" content="Spring MVC">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/01/24/article_spring%20mvc/article_ssm%5C29.png">
   
   
   <title>Spring MVC学习篇 - Okay个人博客</title>
@@ -216,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      618 分钟
+      620 分钟
     </span>
   
 
@@ -295,7 +285,7 @@
 
 <p>注：由于 Maven 的传递性，我们不必将所有需要的包全部配置依赖，而是配置最顶端的依赖，其他靠</p>
 <p>传递性导入。</p>
-<p><img src="/2022/01/24/article_spring%20mvc/article_ssm%5C29.png" srcset="/img/loading.gif" lazyload alt="29"></p>
+<p>![29](article_spring mvc\29.png)</p>
 <h2 id="2-3、配置web-xml"><a href="#2-3、配置web-xml" class="headerlink" title="2.3、配置web.xml"></a>2.3、配置web.xml</h2><p>注册SpringMVC的前端控制器DispatcherServlet</p>
 <h3 id="①默认配置方式"><a href="#①默认配置方式" class="headerlink" title="①默认配置方式"></a>①默认配置方式</h3><p>此配置作用下，SpringMVC的配置文件默认位于WEB-INF下，默认名称为<servlet-name>-</servlet-name></p>
 <p>servlet.xml，例如，以下配置所对应SpringMVC的配置文件位于WEB-INF下，文件名为springMVC</p>
@@ -475,21 +465,21 @@
 <p>后缀所得到的最终路径，会通过转发的方式实现跳转</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RequestMapping(&quot;/testHello&quot;)</span><br><span class="hljs-keyword">public</span> String <span class="hljs-title function_">testHello</span><span class="hljs-params">()</span>&#123;<br>	<span class="hljs-keyword">return</span> <span class="hljs-string">&quot;hello&quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p><img src="/2022/01/24/article_spring%20mvc/article_ssm%5C30.png" srcset="/img/loading.gif" lazyload alt="30"></p>
+<p>![30](article_spring mvc\30.png)</p>
 <h2 id="6-2、转发视图"><a href="#6-2、转发视图" class="headerlink" title="6.2、转发视图"></a>6.2、转发视图</h2><p>SpringMVC中默认的转发视图是InternalResourceView</p>
 <p>SpringMVC中创建转发视图的情况：</p>
 <p>当控制器方法中所设置的视图名称以”forward:”为前缀时，创建InternalResourceView视图，此时的视图名称不会被SpringMVC配置文件中所配置的视图解析器解析，而是会将前缀”forward:”去掉，剩余部分作为最终路径通过转发的方式实现跳转</p>
 <p>例如”forward:&#x2F;“，”forward:&#x2F;employee”</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RequestMapping(&quot;/testForward&quot;)</span><br><span class="hljs-keyword">public</span> String <span class="hljs-title function_">testForward</span><span class="hljs-params">()</span>&#123;<br>	<span class="hljs-keyword">return</span> <span class="hljs-string">&quot;forward:/testHello&quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p><img src="/2022/01/24/article_spring%20mvc/article_ssm%5C31.png" srcset="/img/loading.gif" lazyload alt="31"></p>
+<p>![31](article_spring mvc\31.png)</p>
 <h2 id="6-3、重定向视图"><a href="#6-3、重定向视图" class="headerlink" title="6.3、重定向视图"></a>6.3、重定向视图</h2><p>SpringMVC中默认的重定向视图是RedirectView</p>
 <p>当控制器方法中所设置的视图名称以”redirect:”为前缀时，创建RedirectView视图，此时的视图名称不</p>
 <p>会被SpringMVC配置文件中所配置的视图解析器解析，而是会将前缀”redirect:”去掉，剩余部分作为最终路径通过重定向的方式实现跳转</p>
 <p>例如”redirect:&#x2F;“，”redirect:&#x2F;employee”</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RequestMapping(&quot;/testRedirect&quot;)</span><br><span class="hljs-keyword">public</span> String <span class="hljs-title function_">testRedirect</span><span class="hljs-params">()</span>&#123;<br>	<span class="hljs-keyword">return</span> <span class="hljs-string">&quot;redirect:/testHello&quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p><img src="/2022/01/24/article_spring%20mvc/article_ssm%5C32.png" srcset="/img/loading.gif" lazyload alt="32"></p>
+<p>![32](article_spring mvc\32.png)</p>
 <blockquote>
 <p>注：</p>
 <p>重定向视图在解析时，会先将redirect:前缀去掉，然后会判断剩余部分是否以&#x2F;开头，若是则会自</p>
@@ -784,7 +774,7 @@
 </ul>
 <p>作用：将模型数据通过页面展示给用户</p>
 <h2 id="14-2、DispatcherServlet初始化过程"><a href="#14-2、DispatcherServlet初始化过程" class="headerlink" title="14.2、DispatcherServlet初始化过程"></a>14.2、DispatcherServlet初始化过程</h2><p>DispatcherServlet 本质上是一个 Servlet，所以天然的遵循 Servlet 的生命周期。所以宏观上是 Servlet生命周期来进行调度。</p>
-<p><img src="/2022/01/24/article_spring%20mvc/article_ssm%5C33.png" srcset="/img/loading.gif" lazyload alt="33"></p>
+<p>![33](article_spring mvc\33.png)</p>
 <h3 id="①初始化WebApplicationContext"><a href="#①初始化WebApplicationContext" class="headerlink" title="①初始化WebApplicationContext"></a>①初始化WebApplicationContext</h3><p>所在类：org.springframework.web.servlet.FrameworkServlet</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">protected</span> WebApplicationContext <span class="hljs-title function_">initWebApplicationContext</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-type">WebApplicationContext</span> <span class="hljs-variable">rootContext</span> <span class="hljs-operator">=</span> WebApplicationContextUtils.getWebApplicationContext(getServletContext());<br>    <span class="hljs-type">WebApplicationContext</span> <span class="hljs-variable">wac</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.webApplicationContext != <span class="hljs-literal">null</span>) &#123;<br>        <span class="hljs-comment">// A context instance was injected at construction time -&gt; use it</span><br>        wac = <span class="hljs-built_in">this</span>.webApplicationContext;<br>        <span class="hljs-keyword">if</span> (wac <span class="hljs-keyword">instanceof</span> ConfigurableWebApplicationContext) &#123;<br>            <span class="hljs-type">ConfigurableWebApplicationContext</span> <span class="hljs-variable">cwac</span> <span class="hljs-operator">=</span>(ConfigurableWebApplicationContext) wac;<br>            <span class="hljs-keyword">if</span> (!cwac.isActive()) &#123;<br>                <span class="hljs-comment">// The context has not yet been refreshed -&gt; provide services such as</span><br>                    <span class="hljs-comment">// setting the parent context, setting the application context id, etc</span><br>                    <span class="hljs-keyword">if</span> (cwac.getParent() == <span class="hljs-literal">null</span>) &#123;<br>                        <span class="hljs-comment">// The context instance was injected without an explicit parent -&gt; set</span><br>                            <span class="hljs-comment">// the root application context (if any; may be null) as the parent</span><br>                            cwac.setParent(rootContext);<br>                    &#125;<br>                configureAndRefreshWebApplicationContext(cwac);<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (wac == <span class="hljs-literal">null</span>) &#123;<br>        <span class="hljs-comment">// No context instance was injected at construction time -&gt; see if one</span><br>        <span class="hljs-comment">// has been registered in the servlet context. If one exists, it is assumed</span><br>            <span class="hljs-comment">// that the parent context (if any) has already been set and that the</span><br>            <span class="hljs-comment">// user has performed any initialization such as setting the context id</span><br>            wac = findWebApplicationContext();<br>    &#125;<br>    <span class="hljs-keyword">if</span> (wac == <span class="hljs-literal">null</span>) &#123;<br>        <span class="hljs-comment">// No context instance is defined for this servlet -&gt; create a local one</span><br>        <span class="hljs-comment">// 创建WebApplicationContext</span><br>        wac = createWebApplicationContext(rootContext);<br>    &#125;<br>    <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">this</span>.refreshEventReceived) &#123;<br>        <span class="hljs-comment">// Either the context is not a ConfigurableApplicationContext with refresh</span><br>            <span class="hljs-comment">// support or the context injected at construction time had already been</span><br>            <span class="hljs-comment">// refreshed -&gt; trigger initial onRefresh manually here.</span><br>            <span class="hljs-keyword">synchronized</span> (<span class="hljs-built_in">this</span>.onRefreshMonitor) &#123;<br>            <span class="hljs-comment">// 刷新WebApplicationContext</span><br>            onRefresh(wac);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.publishContext) &#123;<br>        <span class="hljs-comment">// Publish the context as a servlet context attribute.</span><br>        <span class="hljs-comment">// 将IOC容器在应用域共享</span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">attrName</span> <span class="hljs-operator">=</span> getServletContextAttributeName();<br>        getServletContext().setAttribute(attrName, wac);<br>    &#125;<br>    <span class="hljs-keyword">return</span> wac;<br>&#125;<br></code></pre></td></tr></table></figure>
 
@@ -815,12 +805,12 @@
 <p>a) 不存在</p>
 <p>i. 再判断是否配置了mvc:default-servlet-handler</p>
 <p>ii. 如果没配置，则控制台报映射查找不到，客户端展示404错误</p>
-<p><img src="/2022/01/24/article_spring%20mvc/article_ssm%5C34.png" srcset="/img/loading.gif" lazyload alt="34"></p>
-<p><img src="/2022/01/24/article_spring%20mvc/article_ssm%5C35.png" srcset="/img/loading.gif" lazyload alt="35"></p>
+<p>![34](article_spring mvc\34.png)</p>
+<p>![35](article_spring mvc\35.png)</p>
 <p>iii. 如果有配置，则访问目标资源（一般为静态资源，如：JS,CSS,HTML），找不到客户端也会展示404</p>
 <p>错误</p>
-<p><img src="/2022/01/24/article_spring%20mvc/article_ssm%5C36.png" srcset="/img/loading.gif" lazyload alt="36"></p>
-<p><img src="/2022/01/24/article_spring%20mvc/article_ssm%5C37.png" srcset="/img/loading.gif" lazyload alt="37"></p>
+<p>![36](article_spring mvc\36.png)</p>
+<p>![37](article_spring mvc\37.png)</p>
 <p>b) 存在则执行下面的流程</p>
 <p>\3) 根据该URI，调用HandlerMapping获得该Handler配置的所有相关的对象（包括Handler对象以及</p>
 <p>Handler对象对应的拦截器），最后以HandlerExecutionChain执行链对象的形式返回。</p>
